@@ -1,4 +1,4 @@
-## How to create
+## How to create!
 ```bash
 npx create-react-app frontend-sample --typescript
 ...
