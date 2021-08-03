@@ -1,5 +1,6 @@
 <?php
 function echoFalse()
 {
- echo FALSE;
+    echo FALSE;
 }
+?>
