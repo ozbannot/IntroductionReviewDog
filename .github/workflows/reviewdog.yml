@@ -12,14 +12,25 @@ jobs:
           github_token: ${{ secrets.github_token }}
           standard: PSR12
           target_directory: src
-  eslint:
-    name: runner / eslint
+          
+  php_codesniffer2:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: eslint
-        uses: reviewdog/action-eslint@v1
+      - uses: hrysd/action-php_codesniffer@v1
         with:
+          reporter: github-pr-review
           github_token: ${{ secrets.github_token }}
-          reporter: github-pr-review # Change reporter.
-          eslint_flags: 'github-actions-front-sample/src/**/*.{ts,tsx}'
+          standard: PSR12
+          target_directory: src2
+#  eslint:
+#    name: runner / eslint
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v1
+#      - name: eslint
+#        uses: reviewdog/action-eslint@v1
+#        with:
+#          github_token: ${{ secrets.github_token }}
+#          reporter: github-pr-review # Change reporter.
+#          eslint_flags: 'github-actions-front-sample/src/**/*.{ts,tsx}'
